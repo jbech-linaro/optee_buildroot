@@ -6,7 +6,7 @@ OPTEE=/home/jbech/devel/optee_projects/qemu
 # + BIOS_NSEC_ROOTFS=/home/jbech/devel/medicineyeh/buildroot/output/images/rootfs.cpio \
 
 BIOS=$OPTEE/out/bios-qemu/bios.bin
-EXT4=/home/jbech/devel/medicineyeh/buildroot/output/images/rootfs.ext4
+EXT4=./buildroot/output/images/rootfs.ext4
 #EXT4=/home/jbech/devel/optee_projects/oe-optee/build/tmp-glibc/deploy/images/qemu-optee32/optee-image-qemu-optee32.ext4
 
 
@@ -29,3 +29,5 @@ qemu-system-arm \
 	-device virtio-scsi-device,id=scsi \
 	-drive file=$EXT4,id=rootimg,if=none,format=raw \
 	-device scsi-hd,drive=rootimg
+
+#	-net nic,model=rtl8139 \
